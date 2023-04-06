@@ -12,7 +12,7 @@ async function main(name) {
     try {
         // Connect to the MongoDB cluster
         await client.connect();
-        await searchOrganismName(client, name);
+        return await searchOrganismName(client, name);
 
     } finally {
         await client.close();
@@ -39,10 +39,15 @@ async function searchOrganismName(client, name) {
     ];
 
     const aggCursor = client.db("test").collection("organisms").aggregate(pipeline);
-
+    const allValues = [];
     await aggCursor.forEach(organism => {
-        console.log(`${organism.commonName}: ${organism.scientificName}`);
+        allValues.push({
+            commonName: organism.commonName,
+            scientificName: organism.scientificName
+        })
+        // return `${organism.commonName}: ${organism.scientificName}`;
     });
+    return allValues;
 }
 
 module.exports = { main };

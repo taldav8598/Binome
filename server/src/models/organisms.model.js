@@ -10,7 +10,7 @@ function isScientificName(organism) {
 
 function loadOrganismsData() {
     return new Promise((resolve, reject) => {
-        fs.createReadStream(path.join(__dirname, '..', 'data', 'organism_names.csv'))
+        fs.createReadStream(path.join(__dirname, '..', '..', 'data', 'organism_names.csv'))
         .pipe(parse({
             comment: '#',
             columns: true

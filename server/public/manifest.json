@@ -1,0 +1,26 @@
+{
+  "src/assets/forest.jpg": {
+    "file": "static/forest-7793137f.jpg",
+    "src": "src/assets/forest.jpg"
+  },
+  "src/assets/searchIcon.svg": {
+    "file": "static/searchIcon-3cd07915.svg",
+    "src": "src/assets/searchIcon.svg"
+  },
+  "index.css": {
+    "file": "static/index-857531ed.css",
+    "src": "index.css"
+  },
+  "index.html": {
+    "file": "static/index-20fafe9d.js",
+    "src": "index.html",
+    "isEntry": true,
+    "css": [
+      "static/index-857531ed.css"
+    ],
+    "assets": [
+      "static/searchIcon-3cd07915.svg",
+      "static/forest-7793137f.jpg"
+    ]
+  }
+}

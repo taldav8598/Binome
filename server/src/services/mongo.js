@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
+
 require('dotenv').config();
+
 const { main } =  require('./aggregation');
 // const { loadOrganismsData } = require('../models/organisms.model');
 
@@ -17,9 +19,9 @@ mongoose.connection.on('error', (err) => {
 })
 
 async function startMongoServer(name) {
-    await mongoose.connect(MONGO_URL);
+    await mongoose.connect(MONGO_URL)
     // await loadOrganismsData();
-    await main(name).catch(console.error());
+    return await main(name).catch(console.error());
 }
 
 module.exports = {

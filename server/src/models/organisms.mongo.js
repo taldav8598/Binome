@@ -11,5 +11,5 @@ const organismsSchema = new mongoose.Schema({
   }
 });
 
-// Connects planetSchema with the "planets" collection
-module.exports = mongoose.model('Organisms', organismsSchema);
+// Connects organismsSchema with the "organisms" collection
+module.exports = mongoose.model('Organism', organismsSchema);
