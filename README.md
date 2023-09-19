@@ -19,6 +19,7 @@ To view this project I recommend either:
 - Creating a free shared tier cluster on MongoDB after logging into your account.
 - Creating a search index through the shared tier cluster created.
 - Creating a .env file in the server folder.
+- Uncommenting the code in the server/src/services/mongo.js, server/src/organisms/organisms.router.js, client/src/hooks/requests.js and client/src/hooks/useOrganisms.js to setup the mongoDB database - this may take some time speaking from experience.
 - Naivgating to the Database Deployments tab and clicking the connect button.
 - Clicking on Compass then downloading compass if it is not installed on your operating system.
 - After downloading compass create a new connection in compass.
@@ -26,3 +27,4 @@ To view this project I recommend either:
 - Next add PORT=_YOUR_LOCALHOST_OF_CHOICE_HERE e.g. PORT=5000, and paste your copied connection string MONGODB_URI=_YOUR_MONGODB_URI to the .env file.
 - Navigate to the binome folder using your terminal of choice and type npm run deploy then press enter.
 - Open your selected browser and navigate to the localhost server you selected in your .env file.
+- Where hopefully the project is displayed.
