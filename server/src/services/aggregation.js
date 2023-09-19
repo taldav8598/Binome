@@ -1,8 +1,10 @@
 const { MongoClient } = require('mongodb');
 
+require('dotenv').config();
+
 async function main(name) {
     
-    const uri = "mongodb+srv://Binome:RHVu37qNLGGJic91@binome.d2vovtm.mongodb.net/?retryWrites=true&w=majority";
+    const uri = process.env.MONGO_URI;
     
     // Mongo client used to interact with the Binome database
     const client = new MongoClient(uri);    

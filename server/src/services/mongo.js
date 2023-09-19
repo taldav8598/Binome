@@ -5,7 +5,7 @@ require('dotenv').config();
 const { main } =  require('./aggregation');
 // const { loadOrganismsData } = require('../models/organisms.model');
 
-const MONGO_URI = 'mongodb+srv://Binome:RHVu37qNLGGJic91@binome.d2vovtm.mongodb.net/';
+const MONGO_URI = process.env.MONGO_URI;
 
 mongoose.connection.once('open', () => {
     console.log('MongoDB connection ready!');
