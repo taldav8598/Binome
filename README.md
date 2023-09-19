@@ -12,7 +12,7 @@ To view this project I recommend either:
 - Navigate to the binome folder using your terminal and type npm run deploy then press enter.
 - Open your selected browser and navigate to the localhost server you selected in your .env file.
 - Where hopefully the project is displayed.
-&nbsp;
+OR
 - Forking the repository
 - Use npm install in the client and server folders separately
 - Creating or logging into your MongoDB account.
