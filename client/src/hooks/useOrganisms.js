@@ -46,7 +46,6 @@ function useOrganisms() {
     
 
     return {
-        // organisms,
         submitCommonName
     };
 }

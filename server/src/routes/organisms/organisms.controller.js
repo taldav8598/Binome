@@ -10,7 +10,6 @@ async function httpGetAllOrganisms(req, res) {
 
 async function httpGetQueryData(req, res) {
     
-
     fs.readFile('searchQuery.txt', 'utf-8', async (err, data) => {
         if (err) throw err;
 

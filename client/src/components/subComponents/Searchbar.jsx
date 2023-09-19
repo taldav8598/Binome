@@ -8,12 +8,12 @@ const SearchBar = ({ onSearchChange, searchQuery, organismsQuery }) => {
     // @ TODO - POST searchQuery to backend
     // useEffect(() => {
     // async function fetchOrganisms() {
-    //   const response = await fetch('http://localhost:3000')
+    //   const response = await fetch('http://localhost:8000')
     //   const data = await response.json()
     //   console.log(data);
     // }
     // fetchOrganisms().catch(err => console.log(err));
-    // }, [])
+    // }, []);
 
     return (
     <form 

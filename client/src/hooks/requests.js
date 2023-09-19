@@ -15,6 +15,7 @@ async function httpSubmitCommonName(organism) {
             body: JSON.stringify({"commonName": organism.commonName}),
         })
     } catch(err) {
+        console.log(err);
         return {
             ok: false
         }

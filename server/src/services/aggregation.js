@@ -1,20 +1,27 @@
 const { MongoClient } = require('mongodb');
 
 async function main(name) {
-    // TODO - fill in uri with Binome info
-    const uri = "mongodb+srv://Binome:I3Uq9eedfeD7WOmr@binome.d2vovtm.mongodb.net/?retryWrites=true&w=majority";
-
-    // mongodb+srv://<username>:<password>@<your-cluster-url>/sample_airbnb?retryWrites=true&w=majority
-
+    
+    const uri = "mongodb+srv://Binome:RHVu37qNLGGJic91@binome.d2vovtm.mongodb.net/?retryWrites=true&w=majority";
+    
     // Mongo client used to interact with the Binome database
-    const client = new MongoClient(uri);
+    const client = new MongoClient(uri);    
 
     try {
         // Connect to the MongoDB cluster
         await client.connect();
-        return await searchOrganismName(client, name);
+
+        // Call the searchOrganismName function (assuming it's defined elsewhere)
+        const result = await searchOrganismName(client, name);
+
+        // Handle the result of the search operation here
+        return result;
+
+    } catch (err) {
+        console.error("Error:", err.message);
 
     } finally {
+        // Ensures that the client is closed, even if an error occurs
         await client.close();
     }
 }
@@ -26,27 +33,37 @@ async function main(name) {
  */
 
 async function searchOrganismName(client, name) {
+    // Defines a pipeline array that specifies the aggregation stages for the search
     const pipeline = [
-        {
-            '$search': {
+    {
+        '$search': {
               'index': 'default',
               'text': {
                 'query': name,
                 'path': "commonName"
               }
             }
-          }
+    }
     ];
 
+    // Creates an aggregation cursor by applying th aggregation pipline to the "organisms" in the "test" database
     const aggCursor = client.db("test").collection("organisms").aggregate(pipeline);
+    
+    //Initialises an array to store all results
     const allValues = [];
+    
+    // Iterates throught the documents in the aggregation cursor and extracts the "commonName" and the "scientificName" fields
     await aggCursor.forEach(organism => {
         allValues.push({
             commonName: organism.commonName,
             scientificName: organism.scientificName
-        })
+        });
         // return `${organism.commonName}: ${organism.scientificName}`;
     });
+    
+    // console.log({ allValues });
+
+    // Returns values that include the search results
     return allValues;
 }
 
