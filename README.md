@@ -7,7 +7,7 @@ Which can be utilised to find the scientific names of organisms based on their c
 
 To view this project I recommend either:
 - Contacting me via email so I can send the PORT and MONGODB_URI variables for the .env file.
-- Then creating a .env file in the server folder.
+- Then creating a .env file in the server folder AND adding said variables as follows PORT=_YOUR_LOCALHOST_OF_CHOICE_HERE & MONGODB_URI=_YOUR_MONGODB_URI_HERE
 - Type npm install using your terminal of choice in the client and server folders separately.
 - Navigate to the binome folder using your terminal and type npm run deploy then press enter.
 - Open your selected browser and navigate to the localhost server you selected in your .env file.
