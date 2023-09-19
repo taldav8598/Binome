@@ -14,7 +14,7 @@ To view this project I recommend either:
 - Where hopefully the project is displayed.
 - OR
 - Forking the repository
-- Use npm install in the client and server folders separately
+- Type npm install in the client and server folders separately
 - Creating or logging into your MongoDB account.
 - Creating a free shared tier cluster on MongoDB after logging into your account.
 - Creating a search index through the shared tier cluster created.
